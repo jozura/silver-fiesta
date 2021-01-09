@@ -14,7 +14,7 @@ export default function PlayerTacticTabControls() {
         console.log('switch')
         setActiveTab(tab)
         setTacticIndex(tab)
-    }, [])
+    }, [setTacticIndex])
 
     useEffect(() => {
         switchTab(tabs[tabs.length - 1])
