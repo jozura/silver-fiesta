@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CreationStartForm({NextPage = f => f}) {
+export default function CreationStartForm({gatherData}) {
 
     const maps = ["Mirage", "Inferno", "Nuke", "Dust2"]
     const mapOptions = maps.map((mapName) =>
@@ -11,7 +11,7 @@ export default function CreationStartForm({NextPage = f => f}) {
 
     return (
         <form>
-            <input type="text" placeholder="Tactic Name" required />
+            <input type="text" placeholder="Tactic Name"/>
             <label htmlFor="map">Select map</label>
             <select id="map" name="map">
                 {mapOptions}
