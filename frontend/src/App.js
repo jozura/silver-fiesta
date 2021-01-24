@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React, {useEffect} from 'react'
 import './App.css';
 import Navbar from './components/Navbar/index'
 import ExamplePage from './pages/ExamplePage'
@@ -24,11 +24,24 @@ const MainWrapper = styled.div`
 `;
 
 function App() {
+	useEffect(() => {
+		window.addEventListener("message", event => {
+		  if (event.origin !== process.env.REACT_APP_API_URL) return;
+	
+		  const { token, ok } = event.data;
+		  if (ok) {
+			localStorage.setItem("jwtToken", token);
+			console.log(token);
+		  }
+		});
+	  }, []);
+
   return (
 	// Set background color of the whole site
 	<div style = {{
 		backgroundColor: 'grey'
 	}}>
+    
 	<Router>
 		<Navbar/>
 		<MainWrapper>

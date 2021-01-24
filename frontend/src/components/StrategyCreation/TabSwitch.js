@@ -21,7 +21,7 @@ export default function TabSwitch({children}) {
     }
 
     return (
-        <div>
+        <div style={{marginTop: "10px"}}>
             { tabButtons }
             { children[activeTab] }
         </div>
